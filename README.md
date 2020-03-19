@@ -38,6 +38,7 @@ Once those are installed you can follow these instructions to build and start th
 8. Run the command `docker ps -a` you should see a container with a name of strollerbot-core-1
 9. Success! Now you can "exec into" the container to see and run ROS and our python scripts in an isolated environment
 10. To exec into the container `docker exec -it strollerbot-core-1 /bin/bash`
+11. Clone our robot repo into the container under /home/strollerbot ( <-- Will build this into the Dockerfiel at some point )
 11. Happy exploring!
 
 So, now you have a docker container running ROS and our robot code, but it doesn't do anything ... there's no robot for it to talk to! We need to set up a simulated world for a simulated robot to live in so we can talk to it, or have the robot prototype around so we can commit our code and pull it down onto the real deal.
