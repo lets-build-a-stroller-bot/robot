@@ -8,19 +8,50 @@ These instructions will get you started.
 
 There are a couple of different ways to get started with strollerbot. A [docker](https://www.docker.com/) container can be run locally using the most current strollerbot docker image. Or you can SSH into the exploded robot prototype using the [Balena CLI](https://github.com/balena-io/balena-cli).
 
-### Exploded Robot Prototype
+### Robot Prototype
 
-The exploded robot prototype is a barebones prototype that includes:
+We have a real, drivable prototype now! Woo hoo! The robot prototype is a barebones prototype that includes:
 
-* a Jetson Nano Dev Kit card
-* two motor controllers
+* a Raspberry Pi
+* (2x) Sabertooth motor controllers
 * two motors
+* wooden platform
+* lead acid battery
 
-The goal of the this prototype is to start putting together the basic electronic components that will be needed by the end product / robot without having to invest in / build the hard ware to house it. This allows the stroller bot team to start developing the needed software, connect base components together, and get a better idea of the specifications and mechanical needs for the end robot.
+### Developing Strollerbot Software
 
-#### Connecting to the Exploded Robot
+To develop with the Strollerbot you will need:
 
-To connect to the exploded robot you must have the following:
+Gazebo 9.x ( no other versions, they are not compatible with the ROS version we are using )
+Docker
+Balena Cli
+
+Once those are installed you can follow these instructions to build and start the Docker container that runs the code from the software/core directory in this repo.
+
+1. Clone this repository on to your computer
+2. Change into the directory you just cloned
+3. Change to the software directory
+4. Run the command `docker build -t strollerbot-core .`
+5. You should see a bunch of Extracting, Pull complete messages until finally a Successfully built message
+6. Run the command `docker images` you should see "strollerbot-core" in the list.
+7. Now start the container with the command - `docker run -d --name strollerbot-core-1 strollerbot-core`
+8. Run the command `docker ps -a` you should see a container with a name of strollerbot-core-1
+9. Success! Now you can "exec into" the container to see and run ROS and our python scripts in an isolated environment
+10. To exec into the container `docker exec -it strollerbot-core-1 /bin/bash`
+11. Happy exploring!
+
+So, now you have a docker container running ROS and our robot code, but it doesn't do anything ... there's no robot for it to talk to! We need to set up a simulated world for a simulated robot to live in so we can talk to it, or have the robot prototype around so we can commit our code and pull it down onto the real deal.
+
+Let's set up Gazebo so that we can use a simulation first.
+
+1. Download Gazebo ( 9.x is the only version that works with ROS Melodic, the version of ROS we have on the strollerbot )
+2. ???
+
+#### Connecting to the Robot Prototype
+
+In order to be able to connect to the robot prototype the Raspberry Pi must have power AND connection to the internet.
+
+To connect directly to the robot you must have the following:
 
 * A valid Balena user
 * A valid SSH public key that has been added to your Balena user profile
@@ -37,7 +68,7 @@ To connect:
 `balena ps -a`
 5. Find CONTAINER ID from the list that has the COMMAND "/ros_entrypoint.sh"
 `balena exec -it ${CONTAINER_ID} /bin/bash`
-6. You will now be in the ROS Melodic container running on the Jetson Nano
+6. You will now be in the ROS Melodic container running on the Raspberry Pi
 `rostopic` should run successfully if everything is well
 
 ## Contributing
