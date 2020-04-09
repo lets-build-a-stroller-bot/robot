@@ -72,8 +72,19 @@ To connect:
 6. You will now be in the ROS Melodic container running on the Raspberry Pi
 `rostopic` should run successfully if everything is well
 
-## Learning ROS and Gazebo Tutorials
+## Getting Started - Learn ROS and Gazebo
 
+* USEFUL LINKS 
+	-Robot Ignite Academy has free python and linux entry level courses that are focused on using both with ROS
+		- https://www.robotigniteacademy.com/en/course/linux-robotics/details/
+		- https://www.robotigniteacademy.com/en/course/python-basics/details/
+	-Both ROS and Gazebo have extensive tutorials
+		- http://wiki.ros.org/ROS/Tutorials
+		- http://gazebosim.org/tutorials?cat=guided_b&tut=guided_b2
+
+* Suggested Start
+	1. Go to the ROS tutorial and work through the beginner level pages 1-7. By pages 5 and 6 you will be able to control a 2D turtle on the screen with your arrow keys.
+	2. Now that you have a working catkins_ws directory you can copy the wir_tutorial folder into that directory and run catkin_make. This package will enable you to simulate a ROS robot in gazebo on a track and control it with your keyboard. See the included readme for detailed instructions.
 
 ## Contributing
 
