@@ -21,5 +21,7 @@
 	
 	*To run simple robot that drives in circles
 	$ rosrun wir_tutorial circle.py 
+
+	note: The circle code is a good place to start with adjusting the code and getting a chance to see how things work. The turtlebot3 model that is being used also has camera and lidar data that can be used if you want to work on more advanced aspects. See this ROS tutorial for how to use RVIZ and visualize the information. http://wiki.ros.org/rviz/UserGuide
  
 
