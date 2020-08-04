@@ -45,8 +45,18 @@ So, now you have a docker container running ROS and our robot code, but it doesn
 
 Let's set up Gazebo so that we can use a simulation first.
 
-1. Download Gazebo ( 9.x is the only version that works with ROS Melodic, the version of ROS we have on the strollerbot )
-2. ???
+1. Follow instructions to install Gazebo on your particular OS found at: http://gazebosim.org/tutorials?tut=quick_start ( Gazebo 9.x is the only version that works with ROS Melodic, the version of ROS we have on the strollerbot so please download and install it )
+2. Open gazebo using the terminal:
+`gazebo`
+A loading window should appear and then the gazebo main window.
+3. In the new gazebo window click on the "Insert" tab on the left hand side.
+4. Click the "Add Path" button.
+5. Use the pop up Open Directory window to navigate to the directory in which you cloned the strollerbot repository then navigate to and select software/sim/models.
+6. A new selection should appear in the left hand window with "Strollerbot" as the only possible model option.
+7. Click on "Strollerbot"
+8. The strollerbot model should appear in the right hand "world" window. ( Note: depending on how fast your computer is there may be some lag between clicking and the model showing)
+9. Click again anywhere in the world window to place the model.
+10. To see the robot move drag the right hand drawer open by clicking on the small dot and draggin to the left. Then select the robot in the world window. YOu should see a Joints tab appear. This drawer has the left and right wheel force settings moving both of these up to about 0.1 Newton-meters will make the robot move. ( Make sure the world isn't paused in the very bottom of the world window or your robot won't move.)
 
 #### Connecting to the Robot Prototype
 
